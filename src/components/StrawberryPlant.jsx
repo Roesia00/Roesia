@@ -1,5 +1,5 @@
 import React from 'react';
-function Leaf({position,rotation=[0,0,0],scale=1}){return <mesh position={position} rotation={rotation} scale={[scale,scale,scale]} castShadow><sphereGeometry args={[1,16,10]}/><meshStandardMaterial color="#39864b" roughness={.8}/></mesh>}
+function Leaf({position,rotation=[0,0,0],scale=[1,1,1]}){return <mesh position={position} rotation={rotation} scale={scale} castShadow><sphereGeometry args={[1,16,10]}/><meshStandardMaterial color="#39864b" roughness={.8}/></mesh>}
 function Berry({position,scale=1,color="#d92e48"}){return <group position={position} scale={scale}>
   <mesh position={[0,0,0]} scale={[.27,.36,.25]} castShadow><sphereGeometry args={[1,24,18]}/><meshStandardMaterial color={color} roughness={.34}/></mesh>
   {Array.from({length:6},(_,i)=><mesh key={i} position={[Math.cos(i*Math.PI/3)*.105,.31,Math.sin(i*Math.PI/3)*.105]} rotation={[.25,i*Math.PI/3,.35]} scale={[.13,.035,.065]}><sphereGeometry args={[1,10,8]}/><meshStandardMaterial color="#438c45"/></mesh>)}
